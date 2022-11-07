@@ -10,12 +10,12 @@ export class BookRepository {
     constructor(private dataSource: StaticDataSource){
         dataSource.getBooks().subscribe((data: Book[]) => {
             this.books = data;
-            this.authors = data.map(b => b.author!)
+            this.authors = data.map(b => b.author)
                 .filter((a, index, array) => array.indexOf(a) === index).sort();
         });
     };
 
-    getBooks(author: string = null!): Book[]
+    getBooks(author: string = null): Book[]
     {
         return this.books
             .filter(b => author === null || author === b.author);
@@ -23,7 +23,7 @@ export class BookRepository {
 
     getBook(id: number): Book
     {
-        return this.books.find(b => b._id === id)!;
+        return this.books.find(b => b._id === id);
     }
 
     getAuthors(): string[]

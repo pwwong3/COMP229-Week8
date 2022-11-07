@@ -12,23 +12,19 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { BasePageComponent } from './partials/base-page/base-page.component';
+import { PartialsModule } from './partials/partials.module';
+import { PagesModule } from './pages/pages.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    HomeComponent,
-    AboutComponent,
-    ContactComponent,
-    ProductsComponent,
-    ServicesComponent,
-    BasePageComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BookStoreModule
+    BookStoreModule,
+    PagesModule,
+    PartialsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
