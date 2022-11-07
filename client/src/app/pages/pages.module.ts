@@ -22,7 +22,8 @@ import { PartialsModule } from "../partials/partials.module";
         ContactComponent,
         HomeComponent,
         ProductsComponent,
-        ServicesComponent
+        ServicesComponent,
+        PartialsModule
     ]
 })
 export class PagesModule {}
