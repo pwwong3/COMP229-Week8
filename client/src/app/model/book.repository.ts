@@ -15,10 +15,10 @@ export class BookRepository {
         });
     };
 
-    getBooks(author: string = ''): Book[]
+    getBooks(author: string = null!): Book[]
     {
         return this.books
-            .filter(b => b.author == '' || author === b.author);
+            .filter(b => author === null || author === b.author);
     }
 
     getBook(id: number): Book

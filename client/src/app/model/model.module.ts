@@ -5,4 +5,4 @@ import { StaticDataSource } from './static.datasource';
 @NgModule({
     providers: [BookRepository, StaticDataSource]
 })
-export class BookModule {}
+export class ModelModule {}
