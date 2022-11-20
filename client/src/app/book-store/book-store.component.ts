@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Book } from '../model/book.model';
 import { BookRepository } from '../model/book.repository';
 import { Cart } from '../model/cart.modules';
@@ -15,7 +16,8 @@ export class BookStoreComponent {
 
   constructor(
     private repository: BookRepository,
-    private cart: Cart
+    private cart: Cart,
+    private router: Router
   ) { }
 
   get books(): Book[]
@@ -54,5 +56,6 @@ export class BookStoreComponent {
   addBookToCart(book: Book): void
   {
     this.cart.addLine(book);
+    this.router.navigateByUrl('/cart');
   }
 }
