@@ -9,6 +9,7 @@ export class Cart {
 
     addLine(book: Book, quantity: number = 1): void
     {
+        console.log(this.lines)
         const line = this.lines.find(l => l.book._id === book._id);
         if (line !== undefined) {
             line.quantity += quantity;
@@ -48,7 +49,7 @@ export class Cart {
         this.cartPrice = 0;
         this.lines.forEach(l => {
             this.itemCount += l.quantity;
-            this.cartPrice += (l.quantity * l.book.price!);
+            this.cartPrice += (l.quantity * l.book.price);
         })
     }
 }
@@ -57,7 +58,9 @@ export class CartLine {
     constructor(
         public book: Book,
         public quantity: number
-    ) {
-        
+    ) { }
+    get lineTotal(): number
+    {
+        return this.quantity * this.book.price;
     }
 }
