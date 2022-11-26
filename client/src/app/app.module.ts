@@ -5,6 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BookStoreModule } from './book-store/book-store.module';
 import { PagesModule } from './pages/pages.module';
+import { JwtModule, JwtHelperService, JwtInterceptor } from '@auth0/angular-jwt';
+
+export function jwtTokenGetter(): string {
+  return localStorage.getItem('id_token');
+}
 
 @NgModule({
   declarations: [
@@ -14,7 +19,12 @@ import { PagesModule } from './pages/pages.module';
     BrowserModule,
     AppRoutingModule,
     BookStoreModule,
-    PagesModule
+    PagesModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: jwtTokenGetter
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

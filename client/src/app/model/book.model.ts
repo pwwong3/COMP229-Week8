@@ -7,4 +7,15 @@ export class Book {
         public description?: string,
         public price?: number
     ){}
+
+    public toString(): string {
+        return `Book
+        --------------------------------
+        Name       : ${this.name}
+        Author     : ${this.author}
+        Published  : ${this.published}
+        Discription: ${this.description}
+        Price      : ${this.price}
+        --------------------------------`;
+    }
 }

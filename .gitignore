@@ -126,5 +126,10 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-# Mac
+# Miscellaneous
+/.angular/cache
+
+# System files
 .DS_Store
+Thumbs.db
+

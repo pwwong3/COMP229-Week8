@@ -40,13 +40,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "../../public")));
 app.use(express.static(path.join(__dirname, "../../node_modules")));
+app.use(cors());
 
 //setup express session
 app.use(
   session({
     secret: "SomeSecret",
     saveUninitialized: false,
-    reSave: false,
+    resave: false,
   })
 );
 
@@ -78,9 +79,9 @@ const strategy = new JWTStrategy(jwtOptions, (jwt_payload, done) => {
 });
 passport.use(strategy);
 //routing
-app.use("/", indexRouter);
-app.use("/users", usersRouter);
-app.use("/bookList", booksRouter);
+app.use("/api", indexRouter);
+app.use("/api/users", usersRouter);
+app.use("/api/book-list", booksRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
