@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">COMP229</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link <% if (title === " Home"){ %>active<% } %>" aria-current="page" href="/">
+              <i class="fas fa-laptop house"></i>Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link <% if (title === " About"){ %>active<% } %>" aria-current="page" href="/about">
+              <i class="fas fa-info-circle"></i>About
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link <% if (title === " Services"){ %>active<% } %>" aria-current="page" href="/services">
+              <i class="fas fa-cogs"></i>Services
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link <% if (title === " Products"){ %>active<% } %>" aria-current="page" href="/products">
+              <i class="fas fa-elementor"></i>Products
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link <% if (title === " Books"){ %>active<% } %>" aria-current="page" href="/bookList">
+              <i class="fas fa-book"></i>Books
+          </a>
+        </li>
+        <li class="nav-item">
+
+          <a class="nav-link <% if (title === " Contact"){ %>active<% } %>" aria-current="page" href="/contact">
+              <i class="fas fa-mobile-alt"></i>Contact
+          </a>
+        </li>
+        <%if(typeof displayName==='string' && displayName){%>
+          <li class="navbar-text">
+            <i class="fas fa-lg fa-user"></i>Welcome, <%=displayName%>
+          </li>
+          <li class="nav-item"><a href="/logout" class="nav-link">
+              <i class="fas fa-lg fa-sign-out-alt"></i>logout</a>
+          </li>
+          <%}else{%>
+            <li class="nav-item">
+              <a href="/login" class="nav-link"><i class="fas fa-lg fa-sign-in-alt"></i>Login</a>a>
+            </li>
+            <%}%>
+    </div>
+  </div>
+</nav>
