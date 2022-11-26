@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Book } from '../model/book.model';
 import { BookRepository } from '../model/book.repository';
-import { Cart } from '../model/cart.modules';
+import { Cart } from '../model/cart.model';
 
 @Component({
   selector: 'app-book-store',

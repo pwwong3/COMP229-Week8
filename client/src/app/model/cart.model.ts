@@ -9,7 +9,6 @@ export class Cart {
 
     addLine(book: Book, quantity: number = 1): void
     {
-        console.log(this.lines)
         const line = this.lines.find(l => l.book._id === book._id);
         if (line !== undefined) {
             line.quantity += quantity;

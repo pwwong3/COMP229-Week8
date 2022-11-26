@@ -8,7 +8,6 @@ const passport = require("passport");
 const passportJWT = require("passport-jwt");
 const JWTStrategy = passportJWT.Strategy;
 const ExtractJWT = passportJWT.ExtractJwt;
-//modules for authentication
 const session = require("express-session");
 const passportLocal = require("passport-local");
 const localStrategy = passportLocal.Strategy;
@@ -26,6 +25,7 @@ mongoDB.once("open", () => {
 const indexRouter = require("../routes/index");
 const usersRouter = require("../routes/users");
 const booksRouter = require("../routes/book");
+const orderRouter = require("../routes/order");
 
 const app = express();
 
@@ -82,6 +82,7 @@ passport.use(strategy);
 app.use("/api", indexRouter);
 app.use("/api/users", usersRouter);
 app.use("/api/book-list", booksRouter);
+app.use("/api/orders", orderRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

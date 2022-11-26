@@ -32,7 +32,11 @@ export class RestDataSource {
     
     saveOrder(order: Order): Observable<Order> {
         console.log(JSON.stringify(order));
-        return this.http.post<Order>(`${this.baseUrl}orders`, order);
+        return this.http.post<Order>(`${this.baseUrl}orders/add`, order);
+    }
+
+    getOrder(): Observable<Order[]> {
+        return this.http.get<Order[]>(`${this.baseUrl}orders`);
     }
 
     private loadToken(): void {
