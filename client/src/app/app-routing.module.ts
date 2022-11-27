@@ -19,6 +19,7 @@ const routes: Routes = [
   { path: 'cart', component: CartDetailComponent, data: { title: 'Shopping Cart' }, canActivate: [StoreFirstGuard] },
   { path: 'checkout', component: CheckoutComponent, data: { title: 'Checkout' }, canActivate: [StoreFirstGuard] },
   { path: 'contact', component: ContactComponent, data: { title: 'Contact' } },
+  { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule), canActivate: [StoreFirstGuard]},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', redirectTo: '/home' }
 ];
